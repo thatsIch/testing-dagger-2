@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+    id 'idea'
+    id 'nebula.provided-base' version '3.0.3'
+}
+
+group 'de.thatsich'
+version '1.0.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenLocal()
+    jcenter()
+    mavenCentral()
+}
+
+dependencies {
+    provided 'com.google.dagger:dagger-compiler:2.2'
+
+    compile 'com.google.dagger:dagger:2.2'
+
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.assertj:assertj-core:3.4.0'
+    testCompile 'org.mockito:mockito-all:2.0.2-beta'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.12'
+}
