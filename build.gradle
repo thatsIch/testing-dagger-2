@@ -16,6 +16,20 @@ repositories {
     mavenCentral()
 }
 
+sourceSets {
+    main {
+        java {
+            srcDirs += file('src/main/generated')
+        }
+    }
+}
+
+idea {
+    module {
+        generatedSourceDirs += file('src/main/generated')
+    }
+}
+
 dependencies {
     provided 'com.google.dagger:dagger-compiler:2.2'
 
