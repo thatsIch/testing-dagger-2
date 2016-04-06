@@ -42,7 +42,7 @@ Build, Execution, Deployment
 └─ Compiler 
      └─ Annotation-Processors 
           ├─ Enable annotation processing (has to be checked)
-          └─ tore generated sources relative to: Module content root (has to be selected)
+          └─ Store generated sources relative to: Module content root (has to be selected)
 ```
 
 Another possibility is to let it stay in the build folder and change the build script to that. 
