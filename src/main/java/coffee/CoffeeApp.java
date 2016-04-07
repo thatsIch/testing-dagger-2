@@ -6,9 +6,6 @@ import javax.inject.Singleton;
 import dagger.Component;
 
 
-/**
- * Created by thatsIch on 06.04.2016.
- */
 public class CoffeeApp
 {
 	@Singleton

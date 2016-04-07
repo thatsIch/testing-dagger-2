@@ -39,13 +39,14 @@ public class ThermosiphonTest
 
 		// redirect  sysout
 		final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+		final PrintStream backup = System.out;
 		System.setOut( new PrintStream( outContent ) );
 
 		// when
 		new Thermosiphon( heaterMock ).pump();
 
 		// cleanup
-		System.setOut(null);
+		System.setOut( backup );
 
 		// then
 		Assertions.assertThat( outContent.toString() )
@@ -62,13 +63,14 @@ public class ThermosiphonTest
 
 		// redirect  sysout
 		final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+		final PrintStream backup = System.out;
 		System.setOut( new PrintStream( outContent ) );
 
 		// when
 		new Thermosiphon( heaterMock ).pump();
 
 		// cleanup
-		System.setOut(null);
+		System.setOut( backup );
 
 		// then
 		Assertions.assertThat( outContent.toString() )

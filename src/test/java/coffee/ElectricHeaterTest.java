@@ -67,13 +67,14 @@ public class ElectricHeaterTest
 
 		// redirect  sysout
 		final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+		final PrintStream backup = System.out;
 		System.setOut( new PrintStream( outContent ) );
 
 		// when
 		heater.on();
 
 		// cleanup
-		System.setOut( null );
+		System.setOut( backup );
 
 		Assertions.assertThat( outContent.toString() )
 			.isEqualTo( "~ ~ ~ heating ~ ~ ~" + System.lineSeparator() )
