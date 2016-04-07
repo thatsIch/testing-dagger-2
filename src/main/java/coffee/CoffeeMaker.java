@@ -1,21 +1,27 @@
 package coffee;
 
 
+import javax.annotation.Nonnull;
 import javax.inject.Inject;
 
 import dagger.Lazy;
 
+import static java.util.Objects.requireNonNull;
+
 
 class CoffeeMaker
 {
+	@Nonnull
 	private final Lazy<Heater> heater; // Create a possibly costly heater only when we use it.
+
+	@Nonnull
 	private final Pump pump;
 
 	@Inject
-	CoffeeMaker( Lazy<Heater> heater, Pump pump )
+	CoffeeMaker( @Nonnull Lazy<Heater> heater, @Nonnull Pump pump )
 	{
-		this.heater = heater;
-		this.pump = pump;
+		this.heater = requireNonNull( heater, "The 'heater' can not be 'null'" );
+		this.pump = requireNonNull( pump, "The 'pump' can not be 'null'." );
 	}
 
 	void brew()

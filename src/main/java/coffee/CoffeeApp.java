@@ -10,7 +10,7 @@ public class CoffeeApp
 {
 	@Singleton
 	@Component( modules = { DripCoffeeModule.class } )
-	public interface Coffee
+	interface Coffee
 	{
 		CoffeeMaker maker();
 	}
