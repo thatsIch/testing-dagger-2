@@ -1,8 +1,11 @@
 package coffee;
 
 
-interface Heater {
+interface Heater
+{
 	void on();
+
 	void off();
+
 	boolean isHot();
 }

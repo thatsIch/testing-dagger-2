@@ -9,7 +9,7 @@ import org.mockito.Mockito;
 public class PumpModuleTest
 {
 	@Test
-	public void test_constructingPumpModule_ShouldWork() throws Exception
+	public void constructingPumpModule_ShouldWork() throws Exception
 	{
 		Assertions.assertThat( new PumpModule() )
 			.isEqualToComparingFieldByFieldRecursively( new PumpModule() )
@@ -17,7 +17,7 @@ public class PumpModuleTest
 	}
 
 	@Test
-	public void test_providePump_WithAnyInput_ShouldReturnSame() throws Exception
+	public void providePump_WithAnyInput_ShouldReturnSame() throws Exception
 	{
 		final PumpModule module = new PumpModule();
 		final Thermosiphon thermosiphon = Mockito.mock( Thermosiphon.class );

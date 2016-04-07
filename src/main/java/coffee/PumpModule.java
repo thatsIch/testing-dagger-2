@@ -6,9 +6,11 @@ import dagger.Provides;
 
 
 @Module
-class PumpModule {
+class PumpModule
+{
 	@Provides
-	Pump providePump(Thermosiphon pump) {
+	Pump providePump( Thermosiphon pump )
+	{
 		return pump;
 	}
 }

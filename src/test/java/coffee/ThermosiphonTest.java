@@ -12,7 +12,7 @@ import org.mockito.Mockito;
 public class ThermosiphonTest
 {
 	@Test
-	public void test_constructingThermosiphon_WithNull_ShouldFail()
+	public void constructingThermosiphon_WithNull_ShouldFail()
 	{
 		Assertions.assertThatThrownBy( () -> new Thermosiphon( null ) )
 			.as( "The constructor should not be able to be initialized with 'null'." )
@@ -21,7 +21,7 @@ public class ThermosiphonTest
 	}
 
 	@Test
-	public void test_constructingThermoshiphon_WithHeater_ShouldWork() throws Exception
+	public void constructingThermosiphon_WithHeater_ShouldWork() throws Exception
 	{
 		final Heater heaterMock = Mockito.mock( Heater.class );
 
@@ -31,7 +31,7 @@ public class ThermosiphonTest
 	}
 
 	@Test
-	public void test_pump_WithColdHeater_ShouldWork() throws Exception
+	public void pump_WithColdHeater_ShouldWork() throws Exception
 	{
 		// given
 		final Heater heaterMock = Mockito.mock( Heater.class );
@@ -54,7 +54,7 @@ public class ThermosiphonTest
 	}
 
 	@Test
-	public void test_pump_WithHotHeater_ShouldWork() throws Exception
+	public void pump_WithHotHeater_ShouldWork() throws Exception
 	{
 		// given
 		final Heater heaterMock = Mockito.mock( Heater.class );

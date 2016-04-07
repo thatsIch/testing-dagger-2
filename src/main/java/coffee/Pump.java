@@ -1,6 +1,7 @@
 package coffee;
 
 
-interface Pump {
+interface Pump
+{
 	void pump();
 }
