@@ -31,8 +31,6 @@ public class CoffeeMakerTest
 	@SuppressWarnings( "ConstantConditions" )
 	public void instantiateCoffeeMaker_WithNullPump_ShouldThrowException() throws Exception
 	{
-		final Lazy<Heater> heater = Mockito.any();
-
 		Assertions.assertThatThrownBy( () -> new CoffeeMaker( heater, null ) )
 			.isExactlyInstanceOf( NullPointerException.class )
 			.hasNoCause()

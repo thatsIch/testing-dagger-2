@@ -2,6 +2,15 @@ plugins {
     id 'java'
     id 'idea'
     id 'nebula.provided-base' version '3.0.3'
+
+    // generates coverage data
+    // see homepage: http://eclemma.org/jacoco/
+    // see plugin: https://docs.gradle.org/current/userguide/jacoco_plugin.html
+    id "jacoco"
+
+    // builds a dashboard for all reports
+    // see plugin: https://docs.gradle.org/current/userguide/buildDashboard_plugin.html
+    id 'build-dashboard'
 }
 
 group 'de.thatsich'
@@ -15,20 +24,30 @@ repositories {
     jcenter()
     mavenCentral()
 }
-
-sourceSets {
-    main {
-        java {
-            srcDirs += file('src/main/generated')
-        }
-    }
-}
-
-idea {
-    module {
-        generatedSourceDirs += file('src/main/generated')
-    }
-}
+//
+//sourceSets {
+//    generated {
+//        java {
+//            srcDirs = [file('src/generated/java')]
+//        }
+//    }
+//
+//    main {
+//        compileClasspath += generated.output
+//        runtimeClasspath += generated.output
+//    }
+//
+//    test {
+//        compileClasspath += generated.output
+//        runtimeClasspath += generated.output
+//    }
+//}
+//
+//idea {
+//    module {
+//        generatedSourceDirs += file('src/generated/java')
+//    }
+//}
 
 dependencies {
     provided 'com.google.dagger:dagger-compiler:2.2'
